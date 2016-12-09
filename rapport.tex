@@ -57,8 +57,52 @@
 
 
 
-\section{}
-\paragraph{}
+\section{TP1}
+\paragraph{Hyperviseur Virtual Box}
+
+Installation de la virtual box via la commande:
+
+apt-get install virtualbox-5.0
+
+\paragraph{Machine virtuelle}
+
+Téléchargement de l'image du disque via la commande:
+
+wget http://cdimage.debian.org/debian-cd/8.6.0/multi-arch/iso-cd/debian-8.6.0-amd64-i386-netinst.iso
+
+L'invité est démarré correctement, les logiciels ont bien été installés via la commande suivante:
+
+aptitude install lynx sudo tcpdump vim
+
+\paragraph{Sudo}
+
+La commande visudo vérifier la syntaxe du fichier avant d'écraser l'ancien. Au contraire, la commande vim /etc/sudoers ne vérifie pas les changements du fichier modifié, on pourrait ainsi bloquer la fonctionnalité sudo et donc ne plus avoir accès au fichier sudoers. L'accès serait donc bloqué.
+La commande sudo fonctionne bien après avoir intégré l'utilisateur dans le groupe et décommenté la ligne de mise en route du sudo.
+
+\paragraph{Clonage}
+
+Les clones sont bien réalisés et fonctionnels.
+
+\paragraph{Snapshot}
+
+- Réalisation d'un snapshot de la VM, puis utilisation de la commande en root:
+
+rm -rf / --no-preserve-root
+
+- Après une tentative de redémarrage de la VM, celle-ci ne peut se relancer.
+
+- Restauration de la VM au moment de la snapshot (restaurer l'instantané)
+
+- Relancement de la machine possible
+
+\paragraph{Configuration réseaux}
+
+- Modification de la configuration de la VM: changement du type ``NAT'' en type ``pont'' 
+- Réalisation des commandes ``ip addr'' et ``lynx''
+
+Dans lynx, l'accès à l'addresse n'est pas possible. Cela est du aux restrictions d'accès au site.
+
+
 
 \clearpage
 
